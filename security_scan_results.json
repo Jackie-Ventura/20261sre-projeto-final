@@ -1,0 +1,362 @@
+{
+  "version": "1.5.0",
+  "plugins_used": [
+    {
+      "name": "ArtifactoryDetector"
+    },
+    {
+      "name": "AWSKeyDetector"
+    },
+    {
+      "name": "AzureStorageKeyDetector"
+    },
+    {
+      "name": "Base64HighEntropyString",
+      "limit": 4.5
+    },
+    {
+      "name": "BasicAuthDetector"
+    },
+    {
+      "name": "CloudantDetector"
+    },
+    {
+      "name": "DiscordBotTokenDetector"
+    },
+    {
+      "name": "GitHubTokenDetector"
+    },
+    {
+      "name": "GitLabTokenDetector"
+    },
+    {
+      "name": "HexHighEntropyString",
+      "limit": 3.0
+    },
+    {
+      "name": "IbmCloudIamDetector"
+    },
+    {
+      "name": "IbmCosHmacDetector"
+    },
+    {
+      "name": "IPPublicDetector"
+    },
+    {
+      "name": "JwtTokenDetector"
+    },
+    {
+      "name": "KeywordDetector",
+      "keyword_exclude": ""
+    },
+    {
+      "name": "MailchimpDetector"
+    },
+    {
+      "name": "NpmDetector"
+    },
+    {
+      "name": "OpenAIDetector"
+    },
+    {
+      "name": "PrivateKeyDetector"
+    },
+    {
+      "name": "PypiTokenDetector"
+    },
+    {
+      "name": "SendGridDetector"
+    },
+    {
+      "name": "SlackDetector"
+    },
+    {
+      "name": "SoftlayerDetector"
+    },
+    {
+      "name": "SquareOAuthDetector"
+    },
+    {
+      "name": "StripeDetector"
+    },
+    {
+      "name": "TelegramBotTokenDetector"
+    },
+    {
+      "name": "TwilioKeyDetector"
+    }
+  ],
+  "filters_used": [
+    {
+      "path": "detect_secrets.filters.allowlist.is_line_allowlisted"
+    },
+    {
+      "path": "detect_secrets.filters.common.is_ignored_due_to_verification_policies",
+      "min_level": 2
+    },
+    {
+      "path": "detect_secrets.filters.heuristic.is_indirect_reference"
+    },
+    {
+      "path": "detect_secrets.filters.heuristic.is_likely_id_string"
+    },
+    {
+      "path": "detect_secrets.filters.heuristic.is_lock_file"
+    },
+    {
+      "path": "detect_secrets.filters.heuristic.is_not_alphanumeric_string"
+    },
+    {
+      "path": "detect_secrets.filters.heuristic.is_potential_uuid"
+    },
+    {
+      "path": "detect_secrets.filters.heuristic.is_prefixed_with_dollar_sign"
+    },
+    {
+      "path": "detect_secrets.filters.heuristic.is_sequential_string"
+    },
+    {
+      "path": "detect_secrets.filters.heuristic.is_swagger_file"
+    },
+    {
+      "path": "detect_secrets.filters.heuristic.is_templated_secret"
+    },
+    {
+      "path": "detect_secrets.filters.regex.should_exclude_file",
+      "pattern": [
+        "\\.git"
+      ]
+    }
+  ],
+  "results": {
+    ".aiox-core/development/tasks/db-supabase-setup.md": [
+      {
+        "type": "Basic Auth Credentials",
+        "filename": ".aiox-core/development/tasks/db-supabase-setup.md",
+        "hashed_secret": "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8",
+        "is_verified": false,
+        "line_number": 691
+      }
+    ],
+    ".aiox-core/development/tasks/generate-ai-frontend-prompt.md": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/development/tasks/generate-ai-frontend-prompt.md",
+        "hashed_secret": "ecb252044b5ea0f679ee78ec1a12904739e2904d",
+        "is_verified": false,
+        "line_number": 242
+      }
+    ],
+    ".aiox-core/development/tasks/qa-security-checklist.md": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/development/tasks/qa-security-checklist.md",
+        "hashed_secret": "26ee9daf2398fc69ab31f9f37b1b70f6a1e509bf",
+        "is_verified": false,
+        "line_number": 492
+      }
+    ],
+    ".aiox-core/development/tasks/security-scan.md": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/development/tasks/security-scan.md",
+        "hashed_secret": "fd6a5ecb0c6d5148842ac5a363fcb56a58341f32",
+        "is_verified": false,
+        "line_number": 761
+      }
+    ],
+    ".aiox-core/development/tasks/setup-database.md": [
+      {
+        "type": "Basic Auth Credentials",
+        "filename": ".aiox-core/development/tasks/setup-database.md",
+        "hashed_secret": "afc848c316af1a89d49826c5ae9d00ed769415f3",
+        "is_verified": false,
+        "line_number": 711
+      }
+    ],
+    ".aiox-core/development/tasks/setup-github.md": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/development/tasks/setup-github.md",
+        "hashed_secret": "10a216ff7496415b413f085de0045cd0e5856c66",
+        "is_verified": false,
+        "line_number": 283
+      }
+    ],
+    ".aiox-core/development/tasks/setup-llm-routing.md": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/development/tasks/setup-llm-routing.md",
+        "hashed_secret": "a2f2e97de6f7af39a9f208854d9106322af07d27",
+        "is_verified": false,
+        "line_number": 129
+      }
+    ],
+    ".aiox-core/development/tasks/verify-subtask.md": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/development/tasks/verify-subtask.md",
+        "hashed_secret": "7288edd0fc3ffcbe93a0cf06e3568e28521687bc",
+        "is_verified": false,
+        "line_number": 175
+      }
+    ],
+    ".aiox-core/docs/standards/AIOX-LIVRO-DE-OURO-V2.2-SUMMARY.md": [
+      {
+        "type": "Basic Auth Credentials",
+        "filename": ".aiox-core/docs/standards/AIOX-LIVRO-DE-OURO-V2.2-SUMMARY.md",
+        "hashed_secret": "1ee24639807cde38bc5069c578f80624f46eeecf",
+        "is_verified": false,
+        "line_number": 1330
+      }
+    ],
+    ".aiox-core/infrastructure/integrations/ai-providers/README.md": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/infrastructure/integrations/ai-providers/README.md",
+        "hashed_secret": "319608a684d2f387e6d2469c45de78fafec48fd4",
+        "is_verified": false,
+        "line_number": 59
+      }
+    ],
+    ".aiox-core/infrastructure/integrations/ai-providers/ai-provider-factory.js": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/infrastructure/integrations/ai-providers/ai-provider-factory.js",
+        "hashed_secret": "02ecb94373bfb3dfe827ca18409f50b016e8302a",
+        "is_verified": false,
+        "line_number": 68
+      },
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/infrastructure/integrations/ai-providers/ai-provider-factory.js",
+        "hashed_secret": "319608a684d2f387e6d2469c45de78fafec48fd4",
+        "is_verified": false,
+        "line_number": 76
+      }
+    ],
+    ".aiox-core/infrastructure/integrations/ai-providers/openai-compatible-provider.js": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/infrastructure/integrations/ai-providers/openai-compatible-provider.js",
+        "hashed_secret": "02ecb94373bfb3dfe827ca18409f50b016e8302a",
+        "is_verified": false,
+        "line_number": 29
+      }
+    ],
+    ".aiox-core/infrastructure/scripts/llm-routing/templates/claude-free-tracked.cmd": [
+      {
+        "type": "Base64 High Entropy String",
+        "filename": ".aiox-core/infrastructure/scripts/llm-routing/templates/claude-free-tracked.cmd",
+        "hashed_secret": "5b7e6723b074ca8af125ba6c7e38f34acc41433b",
+        "is_verified": false,
+        "line_number": 120
+      }
+    ],
+    ".aiox-core/infrastructure/scripts/llm-routing/templates/claude-free-tracked.sh": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/infrastructure/scripts/llm-routing/templates/claude-free-tracked.sh",
+        "hashed_secret": "5d192d8e3e2fdef9fdcb70d569cb49017a624a92",
+        "is_verified": false,
+        "line_number": 44
+      }
+    ],
+    ".aiox-core/infrastructure/scripts/llm-routing/templates/claude-free.cmd": [
+      {
+        "type": "Base64 High Entropy String",
+        "filename": ".aiox-core/infrastructure/scripts/llm-routing/templates/claude-free.cmd",
+        "hashed_secret": "5b7e6723b074ca8af125ba6c7e38f34acc41433b",
+        "is_verified": false,
+        "line_number": 73
+      }
+    ],
+    ".aiox-core/infrastructure/tools/cli/llm-routing.yaml": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/infrastructure/tools/cli/llm-routing.yaml",
+        "hashed_secret": "a33433e33b5b853aa3a390c19421a5fab43e62d0",
+        "is_verified": false,
+        "line_number": 113
+      }
+    ],
+    ".aiox-core/infrastructure/tools/mcp/google-workspace.yaml": [
+      {
+        "type": "Hex High Entropy String",
+        "filename": ".aiox-core/infrastructure/tools/mcp/google-workspace.yaml",
+        "hashed_secret": "c95da0c6696342c867ef0c8258d2f74d20fd94d4",
+        "is_verified": false,
+        "line_number": 832
+      }
+    ],
+    ".aiox-core/product/data/supabase-patterns.md": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/product/data/supabase-patterns.md",
+        "hashed_secret": "354b3a4b7715d3694c88a4fa7db49e41de86568e",
+        "is_verified": false,
+        "line_number": 72
+      }
+    ],
+    ".aiox-core/product/templates/aiox-ai-config.yaml": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/product/templates/aiox-ai-config.yaml",
+        "hashed_secret": "319608a684d2f387e6d2469c45de78fafec48fd4",
+        "is_verified": false,
+        "line_number": 77
+      },
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/product/templates/aiox-ai-config.yaml",
+        "hashed_secret": "b18d45d8dfcb183f2cf1bad8a7e7f59ee46ddf72",
+        "is_verified": false,
+        "line_number": 88
+      }
+    ],
+    ".aiox-core/product/templates/engine/elicitation.js": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/product/templates/engine/elicitation.js",
+        "hashed_secret": "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8",
+        "is_verified": false,
+        "line_number": 26
+      }
+    ],
+    ".aiox-core/product/templates/eslintrc-security.json": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".aiox-core/product/templates/eslintrc-security.json",
+        "hashed_secret": "11f9578d05e6f7bb58a3cdd00107e9f4e3882671",
+        "is_verified": false,
+        "line_number": 30
+      }
+    ],
+    ".aiox-core/product/templates/migration-plan-tmpl.yaml": [
+      {
+        "type": "Hex High Entropy String",
+        "filename": ".aiox-core/product/templates/migration-plan-tmpl.yaml",
+        "hashed_secret": "244f421f896bdcdd2784dccf4eaf7c8dfd5189b5",
+        "is_verified": false,
+        "line_number": 409
+      }
+    ],
+    ".env": [
+      {
+        "type": "Secret Keyword",
+        "filename": ".env",
+        "hashed_secret": "90228e2433a1eca916f8012ce9b912ed4818c713",
+        "is_verified": false,
+        "line_number": 5
+      },
+      {
+        "type": "Secret Keyword",
+        "filename": ".env",
+        "hashed_secret": "bc565f6e909ec7d3c18e2ff5d9eeb2300ff20b7f",
+        "is_verified": false,
+        "line_number": 11
+      }
+    ]
+  },
+  "generated_at": "2026-05-31T17:55:15Z"
+}
