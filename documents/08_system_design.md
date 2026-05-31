@@ -61,3 +61,14 @@ Esta abordagem é excelente para **resiliência e rastreabilidade**. Ao salvar o
 2. **Reprocessamento:** Podemos reconstruir a camada Silver sem precisar ler os arquivos originais novamente.
 3. **Auditoria:** Sabemos exatamente o que veio de cada arquivo e quando.
 *Ponto de Atenção:* O custo é um leve aumento no uso de armazenamento e a necessidade de usar funções de JSON do ClickHouse (ex: `JSONExtractString`) nas transformações dbt, o que é muito performático no ClickHouse.
+
+## Interface do Usuário (Dashboard)
+
+O dashboard desenvolvido em Streamlit permite a visualização em tempo real dos indicadores de desempenho de vendas da Northwind.
+
+### Visão Geral do Dashboard
+![Dashboard 01](img/01.png)
+
+### Detalhamento e KPIs
+![Dashboard 02](img/02.png)
+

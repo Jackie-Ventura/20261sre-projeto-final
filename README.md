@@ -44,6 +44,9 @@ graph LR
     CH_B -.-> Tenacity
 ```
 
+### 🖥️ Visualização do Dashboard
+![Dashboard Preview](documents/img/01.png)
+
 ### Componentes e Decisões Arquiteturais:
 *   **MinIO (S3-Compatible):** Armazenamento durável de objetos, garantindo a **Tática de Redundância de Dados (Bass)** para recuperação de desastres.
 *   **DuckDB:** Motor de processamento em memória para ingestão ultra-rápida de CSVs para JSON, reduzindo o tempo de CPU (Eficiência de Performance).
