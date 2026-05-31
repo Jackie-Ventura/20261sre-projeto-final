@@ -26,16 +26,15 @@ jobs:
 
     - name: Create .env file
       run: |
-        cp .env.example .env
-        # Preencher com valores padrão para o teste no Docker
-        sed -i 's/CLICKHOUSE_HOST=/CLICKHOUSE_HOST=clickhouse-northwind/' .env
-        sed -i 's/CLICKHOUSE_PORT=/CLICKHOUSE_PORT=8123/' .env
-        sed -i 's/CLICKHOUSE_USER=/CLICKHOUSE_USER=default/' .env
-        sed -i 's/CLICKHOUSE_PASSWORD=/CLICKHOUSE_PASSWORD=northwind/' .env
-        sed -i 's/CLICKHOUSE_DB=/CLICKHOUSE_DB=northwind/' .env
-        sed -i 's/MINIO_ENDPOINT=/MINIO_ENDPOINT=minio-northwind:9000/' .env
-        sed -i 's/MINIO_ACCESS_KEY=/MINIO_ACCESS_KEY=minio_user/' .env
-        sed -i 's/MINIO_SECRET_KEY=/MINIO_SECRET_KEY=minio_password/' .env
+        echo "CLICKHOUSE_HOST=clickhouse-northwind" > .env
+        echo "CLICKHOUSE_PORT=8123" >> .env
+        echo "CLICKHOUSE_USER=default" >> .env
+        echo "CLICKHOUSE_PASSWORD=northwind" >> .env
+        echo "CLICKHOUSE_DB=northwind" >> .env
+        echo "MINIO_ENDPOINT=minio-northwind:9000" >> .env
+        echo "MINIO_ACCESS_KEY=minio_user" >> .env
+        echo "MINIO_SECRET_KEY=minio_password" >> .env
+        echo "CSV_DATA_DIR=dados_northwind" >> .env
 
     - name: Start Infrastructure
       run: docker compose up -d --build
