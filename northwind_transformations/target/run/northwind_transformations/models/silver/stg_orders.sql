@@ -10,7 +10,7 @@
         
   
 
-  insert into `northwind`.`stg_orders`
+  insert into `northwind`.`stg_orders__dbt_backup`
         ("order_id", "customer_id", "employee_id", "order_date", "freight", "ship_country")with raw_data as (
     select
         JSONExtractString(data, 'order_id') as order_id,
