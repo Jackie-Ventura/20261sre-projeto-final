@@ -8,6 +8,10 @@ python-dotenv
 # Transformação
 dbt-clickhouse
 
+# Testes
+pytest
+pytest-mock
+
 # Visualização
 streamlit
 plotly

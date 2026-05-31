@@ -1,6 +1,7 @@
 # 📊 Northwind Modern Data Pipeline
 
-[![CI/CD Pipeline](https://img.shields.io/badge/CI%2FCD-Active-success)](#)
+[![CI/CD Pipeline](https://github.com/FabioMDS-SC/20261sre-projeto-final/actions/workflows/main.yml/badge.svg)](https://github.com/FabioMDS-SC/20261sre-projeto-final/actions/workflows/main.yml)
+[![Security Scan](https://img.shields.io/badge/Security_Scan-Passed-success)](#)
 [![Stack](https://img.shields.io/badge/Stack-Modern_Data_Stack-blue)](#)
 
 ## 6.1 Objeto do Projeto
@@ -51,24 +52,32 @@ graph LR
 *   **Tenacity & Heartbeats:** Camada de resiliência que implementa **Retentativas com Backoff Exponencial (Bass)** para mitigar falhas transitórias de rede.
 *   **Streamlit:** Interface visual para entrega de valor imediato ao negócio com baixa latência de desenvolvimento.
 
-## 🚀 Como Executar
+## 🚀 Como Executar (Quick Start)
 
-### 1. Subir a Infraestrutura
-Certifique-se de ter o Docker e Docker Compose instalados e execute:
+Para subir todo o ambiente (infraestrutura, ingestão e transformações) em um único comando, utilize o **Makefile**:
+
 ```bash
-docker-compose up -d --build
+# Provisionamento completo em ~5 minutos
+make up
 ```
 
-### 2. Configurar o Ambiente e Ingestão
-Execute o script de setup automático dentro do container da aplicação:
+### Pré-requisitos
+- Docker & Docker Compose
+- Git
+- Make (opcional, mas recomendado)
+
+O comando `make up` irá:
+1. Subir os containers (MinIO, ClickHouse, App).
+2. Aguardar a saúde dos serviços.
+3. Executar o `setup.sh` (Buckets, Ingestão Bronze, dbt Silver/Gold).
+
+### Alternativa sem Make
+Caso não possua o Make instalado:
 ```bash
+docker compose up -d --build
+# Aguarde 10 segundos e execute:
 docker exec -it app-northwind ./setup.sh
 ```
-Este comando irá:
-- Criar os buckets no MinIO e subir os CSVs originais.
-- Criar a tabela `ingestion` (Bronze) no ClickHouse.
-- Executar a ingestão dos dados brutos em formato JSON via DuckDB.
-- Rodar as transformações dbt (Silver e Gold).
 
 ### 3. Acessar o Dashboard
 O dashboard Streamlit estará disponível em:
@@ -77,9 +86,9 @@ O dashboard Streamlit estará disponível em:
 ## 6.4 Como verificar o funcionamento adequado?
 
 ### Validação por Testes
-Execute a suite de testes automatizados (Unitários e Integração):
+Execute a suite via Makefile:
 ```bash
-PYTHONPATH=. pytest tests/
+make test
 ```
 
 ### Validação de Dados (Queries SQL)
