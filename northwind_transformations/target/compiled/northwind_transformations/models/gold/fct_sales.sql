@@ -4,10 +4,10 @@ with orders as (
 details as (
     select 
         order_id,
-        sum(total_price) as order_total_value,
-        sum(quantity) as total_items
+        product_id,
+        total_price as line_total_price,
+        quantity
     from `northwind`.`stg_order_details`
-    group by order_id
 )
 
 select
@@ -15,7 +15,8 @@ select
     o.customer_id,
     o.order_date,
     o.ship_country,
-    d.order_total_value,
-    d.total_items
+    d.product_id,
+    d.line_total_price,
+    d.quantity
 from orders o
-left join details d on o.order_id = d.order_id
+inner join details d on o.order_id = d.order_id
