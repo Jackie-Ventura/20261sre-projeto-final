@@ -57,7 +57,7 @@ jobs:
         exit 1
 
     - name: Run Setup
-      run: docker compose exec -t app-northwind ./setup.sh
+      run: docker compose exec -t app ./setup.sh
 
     - name: Run Tests
-      run: docker compose exec -t app-northwind pytest tests/
+      run: docker compose exec -t app pytest tests/
