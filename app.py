@@ -26,10 +26,13 @@ try:
     
     # Query Gold Layer
     df = client.query_df("SELECT * FROM fct_sales")
+    df['order_date'] = pd.to_datetime(df['order_date'])
+    df['month'] = df['order_date'].dt.to_period('M').astype(str)
 
-    # KPIs superiores
-    total_sales = df['order_total_value'].sum()
-    total_orders = df['order_id'].nunique()
+    # 1. KPIs superiores (baseados em pedidos únicos)
+    unique_orders = df.drop_duplicates('order_id')
+    total_sales = df['line_total_price'].sum()
+    total_orders = unique_orders['order_id'].nunique()
     avg_order_value = total_sales / total_orders if total_orders > 0 else 0
 
     col1, col2, col3 = st.columns(3)
@@ -37,23 +40,67 @@ try:
     col2.metric("Total de Pedidos", f"{total_orders}")
     col3.metric("Ticket Médio", f"$ {avg_order_value:,.2f}")
 
-    # Gráficos
+    st.divider()
+
+    # 2. Pergunta Específica: Top 10 Produtos com maior receita líquida
+    st.header("🎯 Análise de Performance de Produtos")
+    
+    # Agregação por Produto
+    product_revenue = df.groupby('product_id')['line_total_price'].sum().reset_index()
+    product_revenue = product_revenue.sort_values('line_total_price', ascending=False).head(10)
+    
+    # Agregação Mensal para os Top 10
+    top_10_ids = product_revenue['product_id'].tolist()
+    df_top_10 = df[df['product_id'].isin(top_10_ids)]
+    monthly_top_10 = df_top_10.groupby(['month', 'product_id'])['line_total_price'].sum().reset_index()
+    monthly_top_10 = monthly_top_10.sort_values(['month', 'product_id'])
+
     c1, c2 = st.columns(2)
 
     with c1:
-        st.subheader("Vendas por País")
-        fig_country = px.pie(df, values='order_total_value', names='ship_country', hole=.3)
-        st.plotly_chart(fig_country, use_container_width=True)
+        st.subheader("Top 10 Produtos (Receita Acumulada)")
+        fig_bar = px.bar(
+            product_revenue, 
+            x='product_id', 
+            y='line_total_price',
+            labels={'product_id': 'ID do Produto', 'line_total_price': 'Receita Líquida'},
+            text_auto='.2s',
+            color='line_total_price',
+            color_continuous_scale='Viridis'
+        )
+        st.plotly_chart(fig_bar, use_container_width=True)
 
     with c2:
-        st.subheader("Evolução de Vendas (Mensal)")
-        df['month'] = pd.to_datetime(df['order_date']).dt.to_period('M').astype(str)
-        monthly_sales = df.groupby('month')['order_total_value'].sum().reset_index()
-        fig_trend = px.line(monthly_sales, x='month', y='order_total_value', markers=True)
+        st.subheader("Evolução Mensal (Top 10)")
+        fig_line_top = px.line(
+            monthly_top_10, 
+            x='month', 
+            y='line_total_price', 
+            color='product_id',
+            labels={'month': 'Mês', 'line_total_price': 'Receita Líquida', 'product_id': 'Produto'},
+            markers=True
+        )
+        st.plotly_chart(fig_line_top, use_container_width=True)
+
+    st.divider()
+
+    # 3. Visões Gerais Originais
+    c3, c4 = st.columns(2)
+
+    with c3:
+        st.subheader("Vendas por País")
+        country_sales = df.groupby('ship_country')['line_total_price'].sum().reset_index()
+        fig_country = px.pie(country_sales, values='line_total_price', names='ship_country', hole=.3)
+        st.plotly_chart(fig_country, use_container_width=True)
+
+    with c4:
+        st.subheader("Evolução de Vendas Global (Mensal)")
+        monthly_sales = df.groupby('month')['line_total_price'].sum().reset_index()
+        fig_trend = px.line(monthly_sales, x='month', y='line_total_price', markers=True)
         st.plotly_chart(fig_trend, use_container_width=True)
 
-    st.subheader("Detalhes dos Pedidos")
-    st.dataframe(df.sort_values('order_date', ascending=False), use_container_width=True)
+    st.subheader("Detalhes dos Pedidos (Amostra)")
+    st.dataframe(df.sort_values('order_date', ascending=False).head(100), use_container_width=True)
 
 except Exception as e:
     st.error(f"Erro ao conectar ou buscar dados: {e}")

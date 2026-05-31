@@ -8,11 +8,23 @@ import logging
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
 # Configuração de Logging conforme RNF-10 (Wave 2.2)
-logging.basicConfig(
-    level=logging.INFO,
-    format='{"timestamp": "%(asctime)s", "level": "%(levelname)s", "message": "%(message)s"}'
-)
+import json
+
+class JsonFormatter(logging.Formatter):
+    def format(self, record):
+        log_record = {
+            "timestamp": self.formatTime(record, self.datefmt),
+            "level": record.levelname,
+            "message": record.getMessage()
+        }
+        return json.dumps(log_record)
+
+handler = logging.StreamHandler()
+handler.setFormatter(JsonFormatter(datefmt='%Y-%m-%d %H:%M:%S'))
 logger = logging.getLogger(__name__)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
+logger.propagate = False
 
 load_dotenv()
 
@@ -43,7 +55,7 @@ def validate_csv(file_path):
 
 def run_ingestion():
     ch_db = os.getenv("CLICKHOUSE_DB", "northwind")
-    csv_dir = "dados_northwind"
+    csv_dir = os.getenv("CSV_DATA_DIR", "dados_northwind")
     
     try:
         # Cliente ClickHouse com Retry e Heartbeat
