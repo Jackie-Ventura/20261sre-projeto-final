@@ -58,17 +58,19 @@ try:
     c1, c2 = st.columns(2)
 
     with c1:
-        st.subheader("Top 10 Produtos (Receita Acumulada)")
-        fig_bar = px.bar(
-            product_revenue, 
-            x='product_id', 
-            y='line_total_price',
-            labels={'product_id': 'ID do Produto', 'line_total_price': 'Receita Líquida'},
-            text_auto='.2s',
-            color='line_total_price',
-            color_continuous_scale='Viridis'
+        st.subheader("Top 10 Produtos (Ranking de Receita)")
+        
+        # Formatação para a tabela
+        display_df = product_revenue.copy()
+        display_df.columns = ["ID do Produto", "Receita Líquida"]
+        
+        # Aplicando estilo gradiente (Vermelho para Verde)
+        st.dataframe(
+            display_df.style.background_gradient(cmap='RdYlGn', subset=['Receita Líquida'])
+            .format({"Receita Líquida": "$ {:,.2f}"}),
+            use_container_width=True,
+            hide_index=True
         )
-        st.plotly_chart(fig_bar, use_container_width=True)
 
     with c2:
         st.subheader("Evolução Mensal (Top 10)")
