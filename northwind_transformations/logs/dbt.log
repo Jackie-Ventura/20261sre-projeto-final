@@ -3776,3 +3776,751 @@ having count(*) > 1
 [0m18:15:00.291864 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72db927f73b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72db927f40e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72db909a58e0>]}
 [0m18:15:00.295339 [debug] [MainThread]: Flushing usage events
 [0m18:15:00.426032 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:11:42.116981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a7296f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a7374450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a7388490>]}
+
+
+============================== 21:11:42.128394 | d700a138-2c32-4da1-8811-cdfa2013ac4a ==============================
+[0m21:11:42.128394 [info ] [MainThread]: Running with dbt=1.11.11
+[0m21:11:42.129205 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'introspect': 'True', 'indirect_selection': 'eager', 'fail_fast': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'log_cache_events': 'False', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'log_path': '/app/northwind_transformations/logs', 'no_print': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'printer_width': '80', 'profiles_dir': '.', 'partial_parse': 'True', 'invocation_command': 'dbt run --profiles-dir .', 'debug': 'False', 'quiet': 'False', 'empty': 'False', 'version_check': 'True', 'static_parser': 'True', 'target_path': 'None'}
+[0m21:11:42.367369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd700a138-2c32-4da1-8811-cdfa2013ac4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a70a78d0>]}
+[0m21:11:42.544049 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd700a138-2c32-4da1-8811-cdfa2013ac4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a7945c10>]}
+[0m21:11:42.551006 [info ] [MainThread]: Registered adapter: clickhouse=1.10.0
+[0m21:11:42.893756 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m21:11:43.042274 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m21:11:43.043234 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'd700a138-2c32-4da1-8811-cdfa2013ac4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a72c3ed0>]}
+[0m21:11:45.067602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd700a138-2c32-4da1-8811-cdfa2013ac4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a6bba590>]}
+[0m21:11:45.361739 [debug] [MainThread]: Wrote artifact WritableManifest to /app/northwind_transformations/target/manifest.json
+[0m21:11:45.369158 [debug] [MainThread]: Wrote artifact SemanticManifest to /app/northwind_transformations/target/semantic_manifest.json
+[0m21:11:45.416564 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd700a138-2c32-4da1-8811-cdfa2013ac4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a64595d0>]}
+[0m21:11:45.418058 [info ] [MainThread]: Found 3 models, 8 data tests, 523 macros
+[0m21:11:45.418790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd700a138-2c32-4da1-8811-cdfa2013ac4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a6f17e90>]}
+[0m21:11:45.422538 [info ] [MainThread]: 
+[0m21:11:45.423083 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:11:45.423500 [info ] [MainThread]: 
+[0m21:11:45.424891 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m21:11:45.436815 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m21:11:45.453493 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:11:46.183328 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m21:11:46.186853 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m21:11:46.415389 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list__northwind'
+[0m21:11:46.422487 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:11:46.457820 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__northwind: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "connection_name": "list__northwind"} */
+with mv_sources as (
+      -- Find all MVs and their target tables (database and name of the MV, plus the SELECT SQL)
+      select
+        name as mv_name,
+        database as mv_database,
+        any(as_select) as mv_sql,
+        any(replaceRegexpOne(create_table_query, '.*TO\\s+`?([^`\\s(]+)`?\\.`?([^`\\s(]+)`?.*', '\\1.\\2')) as target_fqn
+      
+      from system.tables
+      
+      where engine = 'MaterializedView'
+        and create_table_query like '%TO %'
+      group by mv_name, mv_database
+    )
+    select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        t.engine = 'MaterializedView', 'materialized_view',
+        t.engine = 'View', 'view',
+        t.engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,
+      groupArrayIf(
+        map('schema', mv_sources.mv_database, 'name', mv_sources.mv_name, 'sql', mv_sources.mv_sql),
+        mv_sources.mv_name != ''
+      ) as mvs_pointing_to_it,0 as is_on_cluster
+        from system.tables as t
+      
+        join system.databases as db on t.database = db.name
+        left join mv_sources on mv_sources.target_fqn = concat(t.database, '.', t.name)
+      where schema = 'northwind'
+      group by name, schema, type, db_engine
+
+  ...
+[0m21:11:46.875084 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.42 seconds
+[0m21:11:46.880239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd700a138-2c32-4da1-8811-cdfa2013ac4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660aa3d8ed0>]}
+[0m21:11:46.893040 [debug] [Thread-1 (]: Began running node model.northwind_transformations.stg_order_details
+[0m21:11:46.894074 [info ] [Thread-1 (]: 1 of 3 START sql table model `northwind`.`stg_order_details` ................... [RUN]
+[0m21:11:46.895391 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list__northwind, now model.northwind_transformations.stg_order_details)
+[0m21:11:46.896075 [debug] [Thread-1 (]: Began compiling node model.northwind_transformations.stg_order_details
+[0m21:11:46.904698 [debug] [Thread-1 (]: Writing injected SQL for node "model.northwind_transformations.stg_order_details"
+[0m21:11:46.905785 [debug] [Thread-1 (]: Began executing node model.northwind_transformations.stg_order_details
+[0m21:11:46.996270 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_order_details: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_order_details"} */
+
+            
+
+    
+        create table `northwind`.`stg_order_details__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS replicated_deduplication_window='0'
+
+                    
+            empty
+          as (
+            with raw_data as (
+    select
+        JSONExtractInt(data, 'order_id') as order_id,
+        JSONExtractInt(data, 'product_id') as product_id,
+        JSONExtractFloat(data, 'unit_price') as unit_price,
+        JSONExtractInt(data, 'quantity') as quantity,
+        JSONExtractFloat(data, 'discount') as discount
+    from northwind.ingestion
+    where tag = 'northwind_order_details.csv'
+)
+
+select
+    order_id,
+    product_id,
+    unit_price,
+    quantity,
+    discount,
+    (unit_price * quantity) * (1 - discount) as total_price
+from raw_data
+          )
+        
+        ...
+[0m21:11:47.037434 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.04 seconds
+[0m21:11:47.063085 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_order_details: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_order_details"} */
+
+    select name, type from system.columns where table = 'stg_order_details__dbt_backup'
+    
+      
+        and database = 'northwind'
+      
+    
+    order by position
+  ...
+[0m21:11:47.080526 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m21:11:47.088535 [debug] [Thread-1 (]: Writing runtime sql for node "model.northwind_transformations.stg_order_details"
+[0m21:11:47.090364 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_order_details: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_order_details"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        
+  
+
+  insert into `northwind`.`stg_order_details__dbt_backup`
+        ("order_id", "product_id", "unit_price", "quantity", "discount", "total_price")with raw_data as (
+    select
+        JSONExtractInt(data, 'order_id') as order_id,
+        JSONExtractInt(data, 'product_id') as product_id,
+        JSONExtractFloat(data, 'unit_price') as unit_price,
+        JSONExtractInt(data, 'quantity') as quantity,
+        JSONExtractFloat(data, 'discount') as discount
+    from northwind.ingestion
+    where tag = 'northwind_order_details.csv'
+)
+
+select
+    order_id,
+    product_id,
+    unit_price,
+    quantity,
+    discount,
+    (unit_price * quantity) * (1 - discount) as total_price
+from raw_data
+  ...
+[0m21:11:47.179362 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.09 seconds
+[0m21:11:47.188220 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_order_details: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_order_details"} */
+EXCHANGE TABLES `northwind`.`stg_order_details__dbt_backup` AND `northwind`.`stg_order_details` 
+  
+  ...
+[0m21:11:47.194158 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m21:11:47.230002 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_order_details: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_order_details"} */
+drop table if exists `northwind`.`stg_order_details__dbt_backup` 
+  ...
+[0m21:11:47.233037 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m21:11:47.237481 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd700a138-2c32-4da1-8811-cdfa2013ac4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a634e410>]}
+[0m21:11:47.238277 [info ] [Thread-1 (]: 1 of 3 OK created sql table model `northwind`.`stg_order_details` .............. [[32mOK[0m in 0.34s]
+[0m21:11:47.239162 [debug] [Thread-1 (]: Finished running node model.northwind_transformations.stg_order_details
+[0m21:11:47.239674 [debug] [Thread-1 (]: Began running node model.northwind_transformations.stg_orders
+[0m21:11:47.241335 [info ] [Thread-1 (]: 2 of 3 START sql table model `northwind`.`stg_orders` .......................... [RUN]
+[0m21:11:47.241984 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.northwind_transformations.stg_order_details, now model.northwind_transformations.stg_orders)
+[0m21:11:47.242395 [debug] [Thread-1 (]: Began compiling node model.northwind_transformations.stg_orders
+[0m21:11:47.245080 [debug] [Thread-1 (]: Writing injected SQL for node "model.northwind_transformations.stg_orders"
+[0m21:11:47.245794 [debug] [Thread-1 (]: Began executing node model.northwind_transformations.stg_orders
+[0m21:11:47.250240 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_orders"} */
+
+            
+
+    
+        create table `northwind`.`stg_orders__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS replicated_deduplication_window='0'
+
+                    
+            empty
+          as (
+            with raw_data as (
+    select
+        JSONExtractString(data, 'order_id') as order_id,
+        JSONExtractString(data, 'customer_id') as customer_id,
+        JSONExtractInt(data, 'employee_id') as employee_id,
+        JSONExtractString(data, 'order_date') as order_date,
+        JSONExtractFloat(data, 'freight') as freight,
+        JSONExtractString(data, 'ship_country') as ship_country
+    from northwind.ingestion
+    where tag = 'northwind_orders.csv'
+)
+
+select
+    toInt64(order_id) as order_id,
+    customer_id,
+    employee_id,
+    toDate(order_date) as order_date,
+    freight,
+    ship_country
+from raw_data
+          )
+        
+        ...
+[0m21:11:47.269570 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m21:11:47.273939 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_orders"} */
+
+    select name, type from system.columns where table = 'stg_orders__dbt_backup'
+    
+      
+        and database = 'northwind'
+      
+    
+    order by position
+  ...
+[0m21:11:47.278476 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m21:11:47.280649 [debug] [Thread-1 (]: Writing runtime sql for node "model.northwind_transformations.stg_orders"
+[0m21:11:47.281590 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_orders"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        
+  
+
+  insert into `northwind`.`stg_orders__dbt_backup`
+        ("order_id", "customer_id", "employee_id", "order_date", "freight", "ship_country")with raw_data as (
+    select
+        JSONExtractString(data, 'order_id') as order_id,
+        JSONExtractString(data, 'customer_id') as customer_id,
+        JSONExtractInt(data, 'employee_id') as employee_id,
+        JSONExtractString(data, 'order_date') as order_date,
+        JSONExtractFloat(data, 'freight') as freight,
+        JSONExtractString(data, 'ship_country') as ship_country
+    from northwind.ingestion
+    where tag = 'northwind_orders.csv'
+)
+
+select
+    toInt64(order_id) as order_id,
+    customer_id,
+    employee_id,
+    toDate(order_date) as order_date,
+    freight,
+    ship_country
+from raw_data
+  ...
+[0m21:11:47.301881 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m21:11:47.303823 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_orders"} */
+EXCHANGE TABLES `northwind`.`stg_orders__dbt_backup` AND `northwind`.`stg_orders` 
+  
+  ...
+[0m21:11:47.306491 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m21:11:47.310749 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_orders"} */
+drop table if exists `northwind`.`stg_orders__dbt_backup` 
+  ...
+[0m21:11:47.313436 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m21:11:47.315484 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd700a138-2c32-4da1-8811-cdfa2013ac4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a65d6710>]}
+[0m21:11:47.316431 [info ] [Thread-1 (]: 2 of 3 OK created sql table model `northwind`.`stg_orders` ..................... [[32mOK[0m in 0.07s]
+[0m21:11:47.317937 [debug] [Thread-1 (]: Finished running node model.northwind_transformations.stg_orders
+[0m21:11:47.319238 [debug] [Thread-1 (]: Began running node model.northwind_transformations.fct_sales
+[0m21:11:47.320093 [info ] [Thread-1 (]: 3 of 3 START sql view model `northwind`.`fct_sales` ............................ [RUN]
+[0m21:11:47.321262 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.northwind_transformations.stg_orders, now model.northwind_transformations.fct_sales)
+[0m21:11:47.321970 [debug] [Thread-1 (]: Began compiling node model.northwind_transformations.fct_sales
+[0m21:11:47.327137 [debug] [Thread-1 (]: Writing injected SQL for node "model.northwind_transformations.fct_sales"
+[0m21:11:47.328842 [debug] [Thread-1 (]: Began executing node model.northwind_transformations.fct_sales
+[0m21:11:47.344263 [debug] [Thread-1 (]: Relation fct_sales already exists, replacing it
+[0m21:11:47.413678 [debug] [Thread-1 (]: Model mvs to replace ['fct_sales_mv']
+[0m21:11:47.419382 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.fct_sales: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.fct_sales"} */
+
+    
+    select name
+    from system.tables
+    where engine = 'MaterializedView'
+      and extract(create_table_query, 'TO\\s+([^\\s(]+)') = 'northwind.fct_sales'
+  
+  ...
+[0m21:11:47.441536 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m21:11:47.466135 [debug] [Thread-1 (]: Writing runtime sql for node "model.northwind_transformations.fct_sales"
+[0m21:11:47.467047 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.fct_sales: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.fct_sales"} */
+
+
+  create or replace view `northwind`.`fct_sales` 
+  
+    
+  
+  
+    
+    
+  as (
+    with orders as (
+    select * from `northwind`.`stg_orders`
+),
+details as (
+    select 
+        order_id,
+        product_id,
+        total_price as line_total_price,
+        quantity
+    from `northwind`.`stg_order_details`
+)
+
+select
+    o.order_id,
+    o.customer_id,
+    o.order_date,
+    o.ship_country,
+    d.product_id,
+    d.line_total_price,
+    d.quantity
+from orders o
+inner join details d on o.order_id = d.order_id
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m21:11:47.476017 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m21:11:47.478789 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd700a138-2c32-4da1-8811-cdfa2013ac4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a465e790>]}
+[0m21:11:47.482718 [info ] [Thread-1 (]: 3 of 3 OK created sql view model `northwind`.`fct_sales` ....................... [[32mOK[0m in 0.16s]
+[0m21:11:47.484180 [debug] [Thread-1 (]: Finished running node model.northwind_transformations.fct_sales
+[0m21:11:47.490844 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:11:47.491183 [debug] [MainThread]: Connection 'list_' was left open.
+[0m21:11:47.491533 [debug] [MainThread]: On list_: Close
+[0m21:11:47.493527 [debug] [MainThread]: Connection 'model.northwind_transformations.fct_sales' was left open.
+[0m21:11:47.494056 [debug] [MainThread]: On model.northwind_transformations.fct_sales: Close
+[0m21:11:47.494886 [info ] [MainThread]: 
+[0m21:11:47.495644 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 2.07 seconds (2.07s).
+[0m21:11:47.496964 [debug] [MainThread]: Command end result
+[0m21:11:47.531151 [debug] [MainThread]: Wrote artifact WritableManifest to /app/northwind_transformations/target/manifest.json
+[0m21:11:47.533152 [debug] [MainThread]: Wrote artifact SemanticManifest to /app/northwind_transformations/target/semantic_manifest.json
+[0m21:11:47.539474 [debug] [MainThread]: Wrote artifact RunExecutionResult to /app/northwind_transformations/target/run_results.json
+[0m21:11:47.539860 [info ] [MainThread]: 
+[0m21:11:47.540338 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:11:47.540698 [info ] [MainThread]: 
+[0m21:11:47.541092 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m21:11:47.543962 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.5076675, "process_in_blocks": "68480", "process_kernel_time": 0.586789, "process_mem_max_rss": "132584", "process_out_blocks": "3824", "process_user_time": 4.8772}
+[0m21:11:47.544719 [debug] [MainThread]: Command `dbt run` succeeded at 21:11:47.544475 after 5.51 seconds
+[0m21:11:47.545239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a72c3110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a72c3510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7660a76a49d0>]}
+[0m21:11:47.545772 [debug] [MainThread]: Flushing usage events
+[0m21:11:47.691237 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:16:44.731097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796173d23bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796173caed90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796173caec50>]}
+
+
+============================== 21:16:44.745675 | ca2b36b1-6103-4922-89ba-2c50d3fb1591 ==============================
+[0m21:16:44.745675 [info ] [MainThread]: Running with dbt=1.11.11
+[0m21:16:44.746893 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'partial_parse': 'True', 'printer_width': '80', 'quiet': 'False', 'static_parser': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'profiles_dir': '.', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'log_format': 'default', 'empty': 'False', 'log_path': '/app/northwind_transformations/logs', 'target_path': 'None', 'introspect': 'True', 'fail_fast': 'False', 'no_print': 'None', 'log_cache_events': 'False', 'invocation_command': 'dbt run --profiles-dir .', 'write_json': 'True', 'use_colors': 'True', 'indirect_selection': 'eager'}
+[0m21:16:44.991950 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ca2b36b1-6103-4922-89ba-2c50d3fb1591', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796173ce3b10>]}
+[0m21:16:45.068060 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ca2b36b1-6103-4922-89ba-2c50d3fb1591', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7961743ba510>]}
+[0m21:16:45.070599 [info ] [MainThread]: Registered adapter: clickhouse=1.10.0
+[0m21:16:45.322418 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m21:16:45.517091 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:16:45.517774 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m21:16:45.518395 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:16:45.558879 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ca2b36b1-6103-4922-89ba-2c50d3fb1591', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7961736ab190>]}
+[0m21:16:45.717027 [debug] [MainThread]: Wrote artifact WritableManifest to /app/northwind_transformations/target/manifest.json
+[0m21:16:45.719542 [debug] [MainThread]: Wrote artifact SemanticManifest to /app/northwind_transformations/target/semantic_manifest.json
+[0m21:16:45.745415 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ca2b36b1-6103-4922-89ba-2c50d3fb1591', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79617396d3d0>]}
+[0m21:16:45.746195 [info ] [MainThread]: Found 3 models, 8 data tests, 523 macros
+[0m21:16:45.747024 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ca2b36b1-6103-4922-89ba-2c50d3fb1591', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79617395b610>]}
+[0m21:16:45.749655 [info ] [MainThread]: 
+[0m21:16:45.751413 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:16:45.752392 [info ] [MainThread]: 
+[0m21:16:45.753442 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m21:16:45.763080 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m21:16:45.777877 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:16:46.145640 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m21:16:46.149967 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m21:16:46.218667 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__northwind)
+[0m21:16:46.231969 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__northwind: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "connection_name": "list__northwind"} */
+with mv_sources as (
+      -- Find all MVs and their target tables (database and name of the MV, plus the SELECT SQL)
+      select
+        name as mv_name,
+        database as mv_database,
+        any(as_select) as mv_sql,
+        any(replaceRegexpOne(create_table_query, '.*TO\\s+`?([^`\\s(]+)`?\\.`?([^`\\s(]+)`?.*', '\\1.\\2')) as target_fqn
+      
+      from system.tables
+      
+      where engine = 'MaterializedView'
+        and create_table_query like '%TO %'
+      group by mv_name, mv_database
+    )
+    select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        t.engine = 'MaterializedView', 'materialized_view',
+        t.engine = 'View', 'view',
+        t.engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,
+      groupArrayIf(
+        map('schema', mv_sources.mv_database, 'name', mv_sources.mv_name, 'sql', mv_sources.mv_sql),
+        mv_sources.mv_name != ''
+      ) as mvs_pointing_to_it,0 as is_on_cluster
+        from system.tables as t
+      
+        join system.databases as db on t.database = db.name
+        left join mv_sources on mv_sources.target_fqn = concat(t.database, '.', t.name)
+      where schema = 'northwind'
+      group by name, schema, type, db_engine
+
+  ...
+[0m21:16:46.604665 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.37 seconds
+[0m21:16:46.610922 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ca2b36b1-6103-4922-89ba-2c50d3fb1591', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796172939790>]}
+[0m21:16:46.615682 [debug] [Thread-1 (]: Began running node model.northwind_transformations.stg_order_details
+[0m21:16:46.616561 [info ] [Thread-1 (]: 1 of 3 START sql table model `northwind`.`stg_order_details` ................... [RUN]
+[0m21:16:46.617731 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list__northwind, now model.northwind_transformations.stg_order_details)
+[0m21:16:46.618705 [debug] [Thread-1 (]: Began compiling node model.northwind_transformations.stg_order_details
+[0m21:16:46.626410 [debug] [Thread-1 (]: Writing injected SQL for node "model.northwind_transformations.stg_order_details"
+[0m21:16:46.627429 [debug] [Thread-1 (]: Began executing node model.northwind_transformations.stg_order_details
+[0m21:16:46.720318 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_order_details: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_order_details"} */
+
+            
+
+    
+        create table `northwind`.`stg_order_details__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS replicated_deduplication_window='0'
+
+                    
+            empty
+          as (
+            with raw_data as (
+    select
+        JSONExtractInt(data, 'order_id') as order_id,
+        JSONExtractInt(data, 'product_id') as product_id,
+        JSONExtractFloat(data, 'unit_price') as unit_price,
+        JSONExtractInt(data, 'quantity') as quantity,
+        JSONExtractFloat(data, 'discount') as discount
+    from northwind.ingestion
+    where tag = 'northwind_order_details.csv'
+)
+
+select
+    order_id,
+    product_id,
+    unit_price,
+    quantity,
+    discount,
+    (unit_price * quantity) * (1 - discount) as total_price
+from raw_data
+          )
+        
+        ...
+[0m21:16:46.800220 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m21:16:46.833198 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_order_details: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_order_details"} */
+
+    select name, type from system.columns where table = 'stg_order_details__dbt_backup'
+    
+      
+        and database = 'northwind'
+      
+    
+    order by position
+  ...
+[0m21:16:46.888438 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m21:16:46.897818 [debug] [Thread-1 (]: Writing runtime sql for node "model.northwind_transformations.stg_order_details"
+[0m21:16:46.899947 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_order_details: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_order_details"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        
+  
+
+  insert into `northwind`.`stg_order_details__dbt_backup`
+        ("order_id", "product_id", "unit_price", "quantity", "discount", "total_price")with raw_data as (
+    select
+        JSONExtractInt(data, 'order_id') as order_id,
+        JSONExtractInt(data, 'product_id') as product_id,
+        JSONExtractFloat(data, 'unit_price') as unit_price,
+        JSONExtractInt(data, 'quantity') as quantity,
+        JSONExtractFloat(data, 'discount') as discount
+    from northwind.ingestion
+    where tag = 'northwind_order_details.csv'
+)
+
+select
+    order_id,
+    product_id,
+    unit_price,
+    quantity,
+    discount,
+    (unit_price * quantity) * (1 - discount) as total_price
+from raw_data
+  ...
+[0m21:16:47.105941 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.20 seconds
+[0m21:16:47.113981 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_order_details: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_order_details"} */
+EXCHANGE TABLES `northwind`.`stg_order_details__dbt_backup` AND `northwind`.`stg_order_details` 
+  
+  ...
+[0m21:16:47.117988 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m21:16:47.154390 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_order_details: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_order_details"} */
+drop table if exists `northwind`.`stg_order_details__dbt_backup` 
+  ...
+[0m21:16:47.168345 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m21:16:47.174817 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ca2b36b1-6103-4922-89ba-2c50d3fb1591', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796173ef0b10>]}
+[0m21:16:47.176025 [info ] [Thread-1 (]: 1 of 3 OK created sql table model `northwind`.`stg_order_details` .............. [[32mOK[0m in 0.56s]
+[0m21:16:47.177305 [debug] [Thread-1 (]: Finished running node model.northwind_transformations.stg_order_details
+[0m21:16:47.178154 [debug] [Thread-1 (]: Began running node model.northwind_transformations.stg_orders
+[0m21:16:47.179247 [info ] [Thread-1 (]: 2 of 3 START sql table model `northwind`.`stg_orders` .......................... [RUN]
+[0m21:16:47.180222 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.northwind_transformations.stg_order_details, now model.northwind_transformations.stg_orders)
+[0m21:16:47.181018 [debug] [Thread-1 (]: Began compiling node model.northwind_transformations.stg_orders
+[0m21:16:47.185370 [debug] [Thread-1 (]: Writing injected SQL for node "model.northwind_transformations.stg_orders"
+[0m21:16:47.186720 [debug] [Thread-1 (]: Began executing node model.northwind_transformations.stg_orders
+[0m21:16:47.191022 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_orders"} */
+
+            
+
+    
+        create table `northwind`.`stg_orders__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS replicated_deduplication_window='0'
+
+                    
+            empty
+          as (
+            with raw_data as (
+    select
+        JSONExtractString(data, 'order_id') as order_id,
+        JSONExtractString(data, 'customer_id') as customer_id,
+        JSONExtractInt(data, 'employee_id') as employee_id,
+        JSONExtractString(data, 'order_date') as order_date,
+        JSONExtractFloat(data, 'freight') as freight,
+        JSONExtractString(data, 'ship_country') as ship_country
+    from northwind.ingestion
+    where tag = 'northwind_orders.csv'
+)
+
+select
+    toInt64(order_id) as order_id,
+    customer_id,
+    employee_id,
+    toDate(order_date) as order_date,
+    freight,
+    ship_country
+from raw_data
+          )
+        
+        ...
+[0m21:16:47.212758 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m21:16:47.216507 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_orders"} */
+
+    select name, type from system.columns where table = 'stg_orders__dbt_backup'
+    
+      
+        and database = 'northwind'
+      
+    
+    order by position
+  ...
+[0m21:16:47.220400 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m21:16:47.222441 [debug] [Thread-1 (]: Writing runtime sql for node "model.northwind_transformations.stg_orders"
+[0m21:16:47.225255 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_orders"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        
+  
+
+  insert into `northwind`.`stg_orders__dbt_backup`
+        ("order_id", "customer_id", "employee_id", "order_date", "freight", "ship_country")with raw_data as (
+    select
+        JSONExtractString(data, 'order_id') as order_id,
+        JSONExtractString(data, 'customer_id') as customer_id,
+        JSONExtractInt(data, 'employee_id') as employee_id,
+        JSONExtractString(data, 'order_date') as order_date,
+        JSONExtractFloat(data, 'freight') as freight,
+        JSONExtractString(data, 'ship_country') as ship_country
+    from northwind.ingestion
+    where tag = 'northwind_orders.csv'
+)
+
+select
+    toInt64(order_id) as order_id,
+    customer_id,
+    employee_id,
+    toDate(order_date) as order_date,
+    freight,
+    ship_country
+from raw_data
+  ...
+[0m21:16:47.256355 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.03 seconds
+[0m21:16:47.258030 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_orders"} */
+EXCHANGE TABLES `northwind`.`stg_orders__dbt_backup` AND `northwind`.`stg_orders` 
+  
+  ...
+[0m21:16:47.263002 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m21:16:47.269896 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.stg_orders"} */
+drop table if exists `northwind`.`stg_orders__dbt_backup` 
+  ...
+[0m21:16:47.272586 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m21:16:47.274506 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ca2b36b1-6103-4922-89ba-2c50d3fb1591', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796172938e50>]}
+[0m21:16:47.275394 [info ] [Thread-1 (]: 2 of 3 OK created sql table model `northwind`.`stg_orders` ..................... [[32mOK[0m in 0.09s]
+[0m21:16:47.276488 [debug] [Thread-1 (]: Finished running node model.northwind_transformations.stg_orders
+[0m21:16:47.278345 [debug] [Thread-1 (]: Began running node model.northwind_transformations.fct_sales
+[0m21:16:47.278995 [info ] [Thread-1 (]: 3 of 3 START sql view model `northwind`.`fct_sales` ............................ [RUN]
+[0m21:16:47.280205 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.northwind_transformations.stg_orders, now model.northwind_transformations.fct_sales)
+[0m21:16:47.280792 [debug] [Thread-1 (]: Began compiling node model.northwind_transformations.fct_sales
+[0m21:16:47.285061 [debug] [Thread-1 (]: Writing injected SQL for node "model.northwind_transformations.fct_sales"
+[0m21:16:47.286956 [debug] [Thread-1 (]: Began executing node model.northwind_transformations.fct_sales
+[0m21:16:47.300195 [debug] [Thread-1 (]: Relation fct_sales already exists, replacing it
+[0m21:16:47.314286 [debug] [Thread-1 (]: Model mvs to replace ['fct_sales_mv']
+[0m21:16:47.317332 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.fct_sales: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.fct_sales"} */
+
+    
+    select name
+    from system.tables
+    where engine = 'MaterializedView'
+      and extract(create_table_query, 'TO\\s+([^\\s(]+)') = 'northwind.fct_sales'
+  
+  ...
+[0m21:16:47.323599 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m21:16:47.345035 [debug] [Thread-1 (]: Writing runtime sql for node "model.northwind_transformations.fct_sales"
+[0m21:16:47.346947 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.northwind_transformations.fct_sales: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "northwind", "target_name": "dev", "node_id": "model.northwind_transformations.fct_sales"} */
+
+
+  create or replace view `northwind`.`fct_sales` 
+  
+    
+  
+  
+    
+    
+  as (
+    with orders as (
+    select * from `northwind`.`stg_orders`
+),
+details as (
+    select 
+        order_id,
+        product_id,
+        total_price as line_total_price,
+        quantity
+    from `northwind`.`stg_order_details`
+)
+
+select
+    o.order_id,
+    o.customer_id,
+    o.order_date,
+    o.ship_country,
+    d.product_id,
+    d.line_total_price,
+    d.quantity
+from orders o
+inner join details d on o.order_id = d.order_id
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m21:16:47.355455 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m21:16:47.358811 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ca2b36b1-6103-4922-89ba-2c50d3fb1591', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79617280cc90>]}
+[0m21:16:47.359674 [info ] [Thread-1 (]: 3 of 3 OK created sql view model `northwind`.`fct_sales` ....................... [[32mOK[0m in 0.08s]
+[0m21:16:47.361036 [debug] [Thread-1 (]: Finished running node model.northwind_transformations.fct_sales
+[0m21:16:47.362555 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:16:47.363031 [debug] [MainThread]: Connection 'model.northwind_transformations.fct_sales' was left open.
+[0m21:16:47.363512 [debug] [MainThread]: On model.northwind_transformations.fct_sales: Close
+[0m21:16:47.364254 [info ] [MainThread]: 
+[0m21:16:47.364843 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 1.61 seconds (1.61s).
+[0m21:16:47.366453 [debug] [MainThread]: Command end result
+[0m21:16:47.426446 [debug] [MainThread]: Wrote artifact WritableManifest to /app/northwind_transformations/target/manifest.json
+[0m21:16:47.430082 [debug] [MainThread]: Wrote artifact SemanticManifest to /app/northwind_transformations/target/semantic_manifest.json
+[0m21:16:47.438713 [debug] [MainThread]: Wrote artifact RunExecutionResult to /app/northwind_transformations/target/run_results.json
+[0m21:16:47.439328 [info ] [MainThread]: 
+[0m21:16:47.441036 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:16:47.442469 [info ] [MainThread]: 
+[0m21:16:47.443799 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m21:16:47.447950 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.7956357, "process_in_blocks": "73040", "process_kernel_time": 0.578318, "process_mem_max_rss": "127148", "process_out_blocks": "2640", "process_user_time": 3.34073}
+[0m21:16:47.449174 [debug] [MainThread]: Command `dbt run` succeeded at 21:16:47.448955 after 2.80 seconds
+[0m21:16:47.450262 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796173caed90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796173d5ff90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796173d04b50>]}
+[0m21:16:47.450987 [debug] [MainThread]: Flushing usage events
+[0m21:16:47.635798 [debug] [MainThread]: An error was encountered while trying to flush usage events
